@@ -1,1 +1,144 @@
-function _0x5284(_0x3764d9,_0x5f0f83){const _0x53e2e9=_0x53e2();return _0x5284=function(_0x52843e,_0x33acea){_0x52843e=_0x52843e-0x1a0;let _0x5e090a=_0x53e2e9[_0x52843e];return _0x5e090a;},_0x5284(_0x3764d9,_0x5f0f83);}const _0x7700d9=_0x5284;(function(_0x46b28d,_0x1ccd9f){const _0x1fdb50=_0x5284,_0x417508=_0x46b28d();while(!![]){try{const _0x1c57ff=parseInt(_0x1fdb50(0x1af))/0x1*(parseInt(_0x1fdb50(0x1b1))/0x2)+-parseInt(_0x1fdb50(0x1c5))/0x3+parseInt(_0x1fdb50(0x1a7))/0x4*(-parseInt(_0x1fdb50(0x1ca))/0x5)+parseInt(_0x1fdb50(0x1c9))/0x6*(parseInt(_0x1fdb50(0x1bf))/0x7)+-parseInt(_0x1fdb50(0x1d2))/0x8+-parseInt(_0x1fdb50(0x1d1))/0x9*(-parseInt(_0x1fdb50(0x1ab))/0xa)+parseInt(_0x1fdb50(0x1d6))/0xb;if(_0x1c57ff===_0x1ccd9f)break;else _0x417508['push'](_0x417508['shift']());}catch(_0x2c9700){_0x417508['push'](_0x417508['shift']());}}}(_0x53e2,0xa344b));var uploadvideo=null;const controlElement=document[_0x7700d9(0x1bc)]('controllive2d'),toggleControlButton=document[_0x7700d9(0x1bc)](_0x7700d9(0x1c2)),origincontrolElementDisplay=controlElement[_0x7700d9(0x1b0)][_0x7700d9(0x1a4)];function _0x53e2(){const _0x3c060f=['innerWidth','clearButton','4GFSdUG','onloadedmetadata','backgroundUpload','result','610FwWNuB','requestPictureInPicture','显示视频','querySelector','9686UQDEEC','style','182rbvYIC','none','setBackgroundImage','block','has','视频元数据已加载','catch','click','log','autoplay-muted','captureStream','getElementById','loop','exitPictureInPicture','18515CXrwHi','loadstart','createElement','toggleControlButton','target','backgroundVideoUpload','662475KQqvWX','pipButton','muted','play','366uGDTdm','2234545tGgUzR','pause','uploadButton','change','srcObject','error','pictureInPictureElement','132309ENlCaJ','6084528itiSUg','src','setBackgroundVideo','dispatchEvent','1732665TffVlM','toggleVideoButton','隐藏视频','files','value','uploadVideoButton','隐藏控制','autoplay','textContent','video','readAsDataURL','clientX','视频加载出错:','live2d','addEventListener','display'];_0x53e2=function(){return _0x3c060f;};return _0x53e2();}document[_0x7700d9(0x1bc)](_0x7700d9(0x1a6))['addEventListener'](_0x7700d9(0x1b8),function(){const _0x431395=_0x7700d9;uploadvideo&&(uploadvideo[_0x431395(0x1cb)](),uploadvideo=null,document[_0x431395(0x1bc)](_0x431395(0x1c4))[_0x431395(0x1da)]='',document[_0x431395(0x1bc)]('backgroundUpload')[_0x431395(0x1da)]=''),window['dispatchEvent'](new CustomEvent('clearBackgroundImage'));}),document[_0x7700d9(0x1bc)](_0x7700d9(0x1cc))['addEventListener']('click',function(){const _0x532fc2=_0x7700d9;document[_0x532fc2(0x1bc)]('backgroundUpload')[_0x532fc2(0x1b8)]();}),document['getElementById'](_0x7700d9(0x1a9))[_0x7700d9(0x1a3)](_0x7700d9(0x1cd),function(_0x3caa34){const _0x3247cf=_0x7700d9,_0x1a4129=_0x3caa34[_0x3247cf(0x1c3)][_0x3247cf(0x1d9)][0x0];if(_0x1a4129){const _0x1392c1=new FileReader();_0x1392c1['onload']=function(_0x891a1){const _0x57d169=_0x3247cf,_0x19561c=new Image();_0x19561c[_0x57d169(0x1d3)]=_0x891a1[_0x57d169(0x1c3)][_0x57d169(0x1aa)],_0x19561c['onload']=function(){const _0x5149d8=_0x57d169;window[_0x5149d8(0x1d5)](new CustomEvent(_0x5149d8(0x1b3),{'detail':_0x19561c}));};},_0x1392c1[_0x3247cf(0x1e0)](_0x1a4129);}}),document[_0x7700d9(0x1bc)](_0x7700d9(0x1db))['addEventListener'](_0x7700d9(0x1b8),function(){const _0x373733=_0x7700d9;document[_0x373733(0x1bc)](_0x373733(0x1c4))['click']();}),document[_0x7700d9(0x1bc)]('backgroundVideoUpload')[_0x7700d9(0x1a3)]('change',function(_0x41cdef){const _0x5a4e23=_0x7700d9,_0x2b9d9e=_0x41cdef['target'][_0x5a4e23(0x1d9)][0x0];_0x2b9d9e&&(uploadvideo=document[_0x5a4e23(0x1c1)](_0x5a4e23(0x1df)),console[_0x5a4e23(0x1b9)](uploadvideo),uploadvideo[_0x5a4e23(0x1d3)]=URL['createObjectURL'](_0x2b9d9e),uploadvideo[_0x5a4e23(0x1bd)]=!0x0,uploadvideo[_0x5a4e23(0x1c7)]=!0x0,uploadvideo[_0x5a4e23(0x1dd)]=!0x0,console[_0x5a4e23(0x1b9)](uploadvideo),uploadvideo[_0x5a4e23(0x1a3)](_0x5a4e23(0x1c0),function(){const _0x505187=_0x5a4e23;uploadvideo[_0x505187(0x1a8)]=function(){const _0x4f89cf=_0x505187;console[_0x4f89cf(0x1b9)](_0x4f89cf(0x1b6)),window[_0x4f89cf(0x1d5)](new CustomEvent(_0x4f89cf(0x1d4),{'detail':uploadvideo}));};}),uploadvideo[_0x5a4e23(0x1a3)](_0x5a4e23(0x1cf),function(){const _0x51bb42=_0x5a4e23;console[_0x51bb42(0x1b9)](_0x51bb42(0x1a1),uploadvideo['error']);}),uploadvideo[_0x5a4e23(0x1c8)]()[_0x5a4e23(0x1b7)](_0x37df85=>{const _0x5381b1=_0x5a4e23;console[_0x5381b1(0x1b9)]('视频播放被阻止:',_0x37df85);}));});const videoElement=document[_0x7700d9(0x1ae)]('.input_video'),toggleButton=document[_0x7700d9(0x1bc)](_0x7700d9(0x1d7)),live2dcanvas=document[_0x7700d9(0x1bc)](_0x7700d9(0x1a2)),canvas2video=document['createElement'](_0x7700d9(0x1df)),params=new URLSearchParams(location['search']);params[_0x7700d9(0x1b5)]('autoplay')?(canvas2video[_0x7700d9(0x1dd)]=!0x0,canvas2video[_0x7700d9(0x1ce)]=live2dcanvas[_0x7700d9(0x1bb)]()):params[_0x7700d9(0x1b5)](_0x7700d9(0x1ba))?(canvas2video[_0x7700d9(0x1dd)]=!0x0,canvas2video['muted']=!0x0,canvas2video[_0x7700d9(0x1ce)]=live2dcanvas[_0x7700d9(0x1bb)]()):(canvas2video[_0x7700d9(0x1ce)]=live2dcanvas['captureStream'](),canvas2video[_0x7700d9(0x1c7)]=!0x0,canvas2video['play']()),toggleButton&&toggleButton[_0x7700d9(0x1a3)](_0x7700d9(0x1b8),function(){const _0x376297=_0x7700d9;videoElement['style'][_0x376297(0x1a4)]===_0x376297(0x1b2)?(videoElement['style'][_0x376297(0x1a4)]=_0x376297(0x1b4),toggleButton[_0x376297(0x1de)]=_0x376297(0x1d8)):(videoElement[_0x376297(0x1b0)]['display']=_0x376297(0x1b2),toggleButton[_0x376297(0x1de)]=_0x376297(0x1ad));}),document['body'][_0x7700d9(0x1a3)]('mousemove',function(_0x1ac943){const _0x54bfa5=_0x7700d9;_0x1ac943[_0x54bfa5(0x1a0)]<0x32||_0x1ac943[_0x54bfa5(0x1a0)]>window[_0x54bfa5(0x1a5)]-0x32?(toggleButton&&(toggleButton['style'][_0x54bfa5(0x1a4)]='block'),toggleControlButton['style'][_0x54bfa5(0x1a4)]='block'):(toggleButton&&(toggleButton['style']['display']=_0x54bfa5(0x1b2)),toggleControlButton['style']['display']=_0x54bfa5(0x1b2));});const pipButton=document[_0x7700d9(0x1bc)](_0x7700d9(0x1c6));pipButton['addEventListener'](_0x7700d9(0x1b8),function(){const _0x2e5177=_0x7700d9;document[_0x2e5177(0x1d0)]?document[_0x2e5177(0x1be)]():canvas2video[_0x2e5177(0x1ac)]();}),toggleControlButton[_0x7700d9(0x1a3)](_0x7700d9(0x1b8),function(){const _0x228f45=_0x7700d9;controlElement['style'][_0x228f45(0x1a4)]===_0x228f45(0x1b2)?(controlElement[_0x228f45(0x1b0)][_0x228f45(0x1a4)]=origincontrolElementDisplay,toggleControlButton['textContent']=_0x228f45(0x1dc)):(controlElement['style'][_0x228f45(0x1a4)]=_0x228f45(0x1b2),toggleControlButton['textContent']='显示控制');});
+var uploadvideo = null;
+const controlElement = document.getElementById('controllive2d');
+const toggleControlButton = document.getElementById("toggleControlButton");
+const origincontrolElementDisplay = controlElement.style.display;
+
+// 清除背景
+document.getElementById("clearButton").addEventListener("click", function () {
+  if (uploadvideo) {
+    uploadvideo.pause();
+    uploadvideo = null;
+    document.getElementById("backgroundVideoUpload").value = '';
+    document.getElementById('backgroundUpload').value = '';
+  }
+  window.dispatchEvent(new CustomEvent('clearBackgroundImage'));
+});
+
+// 触发背景图片上传
+document.getElementById("uploadButton").addEventListener('click', function () {
+  document.getElementById('backgroundUpload').click();
+});
+
+// 处理背景图片上传逻辑
+document.getElementById("backgroundUpload").addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (readerEvent) {
+      const image = new Image();
+      image.src = readerEvent.target.result;
+      image.onload = function () {
+        window.dispatchEvent(new CustomEvent("setBackgroundImage", {
+          'detail': image
+        }));
+      };
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// 触发背景视频上传
+document.getElementById("uploadVideoButton").addEventListener("click", function () {
+  document.getElementById("backgroundVideoUpload").click();
+});
+
+// 处理背景视频上传逻辑
+document.getElementById('backgroundVideoUpload').addEventListener('change', function (event) {
+  const videoFile = event.target.files[0];
+  if (videoFile) {
+    uploadvideo = document.createElement("video");
+    console.log(uploadvideo);
+    uploadvideo.src = URL.createObjectURL(videoFile);
+    uploadvideo.loop = true;
+    uploadvideo.muted = true;
+    uploadvideo.autoplay = true;
+    console.log(uploadvideo);
+    
+    uploadvideo.addEventListener("loadstart", function () {
+      uploadvideo.onloadedmetadata = function () {
+        console.log("视频元数据已加载");
+        window.dispatchEvent(new CustomEvent("setBackgroundVideo", {
+          'detail': uploadvideo
+        }));
+      };
+    });
+    
+    uploadvideo.addEventListener("error", function () {
+      console.log("视频加载出错:", uploadvideo.error);
+    });
+    
+    uploadvideo.play().catch(error => {
+      console.log('视频播放被阻止:', error);
+    });
+  }
+});
+
+const videoElement = document.querySelector('.input_video');
+const toggleButton = document.getElementById("toggleVideoButton");
+const live2dcanvas = document.getElementById("live2d");
+const canvas2video = document.createElement("video");
+const params = new URLSearchParams(location.search);
+
+// 根据 URL 参数设置画布视频自动播放
+if (params.has('autoplay')) {
+  canvas2video.autoplay = true;
+  canvas2video.srcObject = live2dcanvas.captureStream();
+} else if (params.has("autoplay-muted")) {
+  canvas2video.autoplay = true;
+  canvas2video.muted = true;
+  canvas2video.srcObject = live2dcanvas.captureStream();
+} else {
+  canvas2video.srcObject = live2dcanvas.captureStream();
+  canvas2video.muted = true;
+  canvas2video.play();
+}
+
+// 视频显示/隐藏切换
+if (toggleButton) {
+  toggleButton.addEventListener("click", function () {
+    if (videoElement.style.display === "none") {
+      videoElement.style.display = "block";
+      toggleButton.textContent = "隐藏视频";
+    } else {
+      videoElement.style.display = "none";
+      toggleButton.textContent = "显示视频";
+    }
+  });
+}
+
+// 鼠标移动监听：靠近屏幕边缘显示控制按钮
+document.body.addEventListener('mousemove', function (event) {
+  // 将原本的 0x32 转换为了十进制的 50
+  if (event.clientX < 50 || event.clientX > window.innerWidth - 50) {
+    if (toggleButton) {
+      toggleButton.style.display = 'block';
+    }
+    toggleControlButton.style.display = 'block';
+  } else {
+    if (toggleButton) {
+      toggleButton.style.display = "none";
+    }
+    toggleControlButton.style.display = "none";
+  }
+});
+
+// 画中画模式切换
+const pipButton = document.getElementById("pipButton");
+pipButton.addEventListener("click", function () {
+  if (document.pictureInPictureElement) {
+    document.exitPictureInPicture();
+  } else {
+    canvas2video.requestPictureInPicture();
+  }
+});
+
+// 控制面板显示/隐藏切换
+toggleControlButton.addEventListener("click", function () {
+  if (controlElement.style.display === "none") {
+    controlElement.style.display = origincontrolElementDisplay;
+    toggleControlButton.textContent = "隐藏控制";
+  } else {
+    controlElement.style.display = "none";
+    toggleControlButton.textContent = '显示控制';
+  }
+});
