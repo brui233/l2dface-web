@@ -1,1 +1,1 @@
-000
+Deobfuscated code
