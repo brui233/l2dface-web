@@ -1,1 +1,282 @@
-const _0x3f3272=_0x6836;function _0x6836(_0x20fa13,_0x3c9c6d){const _0x15109e=_0x1510();return _0x6836=function(_0x68368d,_0x15b167){_0x68368d=_0x68368d-0xd9;let _0x508e11=_0x15109e[_0x68368d];return _0x508e11;},_0x6836(_0x20fa13,_0x3c9c6d);}(function(_0x20d120,_0x5b6258){const _0x165e73=_0x6836,_0xf36801=_0x20d120();while(!![]){try{const _0x4d3eec=-parseInt(_0x165e73(0xfb))/0x1+parseInt(_0x165e73(0x12a))/0x2+-parseInt(_0x165e73(0x103))/0x3*(parseInt(_0x165e73(0x11b))/0x4)+parseInt(_0x165e73(0x135))/0x5+-parseInt(_0x165e73(0x12e))/0x6+-parseInt(_0x165e73(0xe6))/0x7+-parseInt(_0x165e73(0x111))/0x8*(-parseInt(_0x165e73(0x11e))/0x9);if(_0x4d3eec===_0x5b6258)break;else _0xf36801['push'](_0xf36801['shift']());}catch(_0x46be6e){_0xf36801['push'](_0xf36801['shift']());}}}(_0x1510,0xc17eb));const {Application,live2d:{Live2DModel,MotionPreloadStrategy},Sprite,Texture,Ticker}=PIXI,{Face,Vector:{lerp},Utils:{clamp}}=Kalidokit,urlParams=new URLSearchParams(window[_0x3f3272(0x142)]['search']);let modelUrl=urlParams['get'](_0x3f3272(0xee))||'./models/hiyori/hiyori_pro_t10.model3.json';function _0x1510(){const _0x394468=['json','ParamBodyAngleX','ParamAngleX','ParamBodyAngleZ','hasLoaded','then','children','stabilizeBlink','1410922KOhKpR','myId','focus','modelUrl:','degrees','ParamEyeBallY','screen','width','9ZPGBKG','head','set','setParamFloat','loop','preload','ParamEyeROpen','setBackgroundVideo','global','canplaythrough','eyeParamValue','Connected','My\x20peer\x20ID\x20is:\x20','error','17268896zIowMK','shared','clearBackgroundImage','get','ParamBodyAngleY','baseTexture','NONE','log','selectedMotions','coreModel','1007548Lerxfv','detail','play','9TFtpKy','deltaY','eyeBlink','视频加载完成:','Awaiting...','connection','#live2d','stage','senderId','motions','ParamMouthOpenY','getBoundingClientRect','922750sqRnmw','addChild','ParamEyeLOpen','from','2933862iRiKJs','send','视频加载中:','pointerup','纹理创建成功:','offsetX','scale','4977895QqjkOq','dragging','ParamEyeBallX','split','resource','纹理创建失败或未加载完成','url','offsetY','PARAM_MOUTH_OPEN_Y','value','data','position','querySelector','location','undefined','anchor','getParameterValueById','pointerdown','pupil','interactive','forEach','update','height','ParamMouthForm','mouth','setParameterValueById','舞台子元素数量:','addEventListener','getElementById','peer','wheel','motionManager','1172157dnVOLj','removeChild','function','ParamAngleY','preventDefault','Already\x20connected\x20to\x20another\x20client','ParamAngleZ','live2d','modelUrl','close','pointermove','internalModel','eye'];_0x1510=function(){return _0x394468;};return _0x1510();}if(console[_0x3f3272(0x118)]('modelUrl:',modelUrl),modelUrl['endsWith']('.json')){let json=await fetch(modelUrl)[_0x3f3272(0xf8)](_0x24e741=>_0x24e741[_0x3f3272(0xf3)]());json[_0x3f3272(0x13b)]=json[_0x3f3272(0x13b)]||modelUrl;const selectedMotionsParam=urlParams[_0x3f3272(0x114)](_0x3f3272(0x119)),selectedMotions=selectedMotionsParam?selectedMotionsParam[_0x3f3272(0x138)](','):[];if(selectedMotions['length']===0x0)json[_0x3f3272(0x127)]={};else{const newMotions={};selectedMotions[_0x3f3272(0xda)](_0x177be3=>{const _0x303da2=_0x3f3272;json[_0x303da2(0x127)][_0x177be3]&&(newMotions[_0x177be3]=json['motions'][_0x177be3]);}),json[_0x3f3272(0x127)]=newMotions;}modelUrl=json,console[_0x3f3272(0x118)](_0x3f3272(0xfe),modelUrl);}let currentModel,facemesh,app,backgroundSprite;const peer=new Peer(null,{'debug':0x2});let conn;app=new PIXI['Application']({'view':document[_0x3f3272(0xe2)](_0x3f3272(0xed)),'autoStart':!0x0,'backgroundAlpha':0x0,'backgroundColor':0xffffff,'resizeTo':window}),Live2DModel[_0x3f3272(0x12d)](modelUrl,{'autoInteract':!0x1,'motionPreload':MotionPreloadStrategy[_0x3f3272(0x117)]})['then'](_0x3b0cea=>{const _0x5ed4a0=_0x3f3272;currentModel=_0x3b0cea,currentModel[_0x5ed4a0(0x134)]['set'](0.4),currentModel[_0x5ed4a0(0xd9)]=!0x0,currentModel[_0x5ed4a0(0x144)][_0x5ed4a0(0x105)](0.5,0.5),currentModel[_0x5ed4a0(0x140)]['set'](window['innerWidth']*0.5,window['innerHeight']*0.8),currentModel['on'](_0x5ed4a0(0x146),_0x6abe87=>{const _0x2d0ac4=_0x5ed4a0;currentModel['offsetX']=_0x6abe87[_0x2d0ac4(0x13f)][_0x2d0ac4(0x10b)]['x']-currentModel[_0x2d0ac4(0x140)]['x'],currentModel['offsetY']=_0x6abe87['data'][_0x2d0ac4(0x10b)]['y']-currentModel['position']['y'],currentModel[_0x2d0ac4(0x136)]=!0x0;}),currentModel['on'](_0x5ed4a0(0x131),_0x4b055b=>{const _0x482b94=_0x5ed4a0;currentModel[_0x482b94(0x136)]=!0x1;}),currentModel['on'](_0x5ed4a0(0xf0),_0x2d32b0=>{const _0x4b09c1=_0x5ed4a0;currentModel[_0x4b09c1(0x136)]&&currentModel[_0x4b09c1(0x140)][_0x4b09c1(0x105)](_0x2d32b0[_0x4b09c1(0x13f)][_0x4b09c1(0x10b)]['x']-currentModel[_0x4b09c1(0x133)],_0x2d32b0[_0x4b09c1(0x13f)][_0x4b09c1(0x10b)]['y']-currentModel[_0x4b09c1(0x13c)]);}),document[_0x5ed4a0(0x141)](_0x5ed4a0(0x124))['addEventListener'](_0x5ed4a0(0xe4),_0xc50a39=>{const _0x18f73f=_0x5ed4a0;_0xc50a39[_0x18f73f(0xea)](),currentModel['scale'][_0x18f73f(0x105)](clamp(currentModel[_0x18f73f(0x134)]['x']+_0xc50a39[_0x18f73f(0x11f)]*-0.001,-0.5,0xa));}),app[_0x5ed4a0(0x125)][_0x5ed4a0(0x12b)](currentModel),peer['on']('open',_0x127ee7=>{const _0xc3e6d7=_0x5ed4a0;console[_0xc3e6d7(0x118)](_0xc3e6d7(0x10f)+_0x127ee7),document['getElementById'](_0xc3e6d7(0xfc))[_0xc3e6d7(0x13e)]=_0x127ee7,document['getElementById'](_0xc3e6d7(0x126))[_0xc3e6d7(0x13e)]=_0xc3e6d7(0x122);}),peer['on'](_0x5ed4a0(0x123),function(_0x326f07){const _0x365e29=_0x5ed4a0;if(conn&&conn['open']){_0x326f07['on']('open',function(){const _0xbc6b22=_0x6836;_0x326f07[_0xbc6b22(0x12f)](_0xbc6b22(0xeb)),setTimeout(function(){const _0x28461f=_0xbc6b22;_0x326f07[_0x28461f(0xef)]();},0x1f4);});return;}conn=_0x326f07,console[_0x365e29(0x118)]('Connected\x20to:\x20'+conn[_0x365e29(0xe3)]),document[_0x365e29(0xe2)](_0x365e29(0x126))[_0x365e29(0x13e)]=_0x365e29(0x10e),conn['on'](_0x365e29(0x13f),_0x9a49c5=>{animateLive2DModel(_0x9a49c5);});});}),window['addEventListener'](_0x3f3272(0x113),function(){const _0x6fce5d=_0x3f3272;backgroundSprite&&app[_0x6fce5d(0x125)]['removeChild'](backgroundSprite);}),window[_0x3f3272(0xe1)]('setBackgroundImage',function(_0x4cbaf6){const _0x406f45=_0x3f3272,_0x5e386f=_0x4cbaf6['detail'];backgroundSprite&&app[_0x406f45(0x125)][_0x406f45(0xe7)](backgroundSprite);const _0x6b0d27=Texture[_0x406f45(0x12d)](_0x5e386f);backgroundSprite=new Sprite(_0x6b0d27),backgroundSprite[_0x406f45(0x102)]=app[_0x406f45(0x101)][_0x406f45(0x102)],backgroundSprite['height']=app[_0x406f45(0x101)][_0x406f45(0xdc)],app[_0x406f45(0x125)]['addChildAt'](backgroundSprite,0x0);}),window[_0x3f3272(0xe1)](_0x3f3272(0x10a),function(_0x58af0d){const _0x3d646f=_0x3f3272,_0x21f16a=_0x58af0d[_0x3d646f(0x11c)];console[_0x3d646f(0x118)](_0x3d646f(0x130),_0x21f16a),_0x21f16a[_0x3d646f(0x11d)](),console[_0x3d646f(0x118)]('视频播放中:',_0x21f16a),_0x21f16a['addEventListener'](_0x3d646f(0x10c),function(){const _0x116f04=_0x3d646f;backgroundSprite&&app[_0x116f04(0x125)][_0x116f04(0xe7)](backgroundSprite),console[_0x116f04(0x118)](_0x116f04(0x121),_0x21f16a);const _0x204422=Texture[_0x116f04(0x12d)](_0x21f16a);if(_0x204422[_0x116f04(0x116)][_0x116f04(0x139)]['source'][_0x116f04(0x107)]=!0x0,!_0x204422||_0x204422['baseTexture'][_0x116f04(0xf7)]===!0x1){console[_0x116f04(0x110)](_0x116f04(0x13a));return;}console[_0x116f04(0x118)](_0x116f04(0x132),_0x204422),backgroundSprite=new Sprite(_0x204422),backgroundSprite[_0x116f04(0x108)]='auto',backgroundSprite[_0x116f04(0x102)]=app[_0x116f04(0x101)]['width'],backgroundSprite[_0x116f04(0xdc)]=app[_0x116f04(0x101)][_0x116f04(0xdc)],app[_0x116f04(0x125)]['addChildAt'](backgroundSprite,0x0),console[_0x116f04(0x118)](_0x116f04(0xe0),app[_0x116f04(0x125)][_0x116f04(0xf9)]['length']),Ticker[_0x116f04(0x112)]['add'](()=>{const _0x39d311=_0x116f04;_0x204422[_0x39d311(0xdb)]();});}),_0x21f16a['play']();});const animateLive2DModel=_0x340aef=>{const _0x532fdd=_0x3f3272;if(!currentModel||!_0x340aef)return;let _0x3ca7a2;if(_0x340aef){_0x3ca7a2=Face['solve'](_0x340aef,{'runtime':'mediapipe','video':null});const _0x4f98f7=currentModel[_0x532fdd(0xf1)]['coreModel'],_0xdc7d28=typeof _0x4f98f7['getParameterValueById']==_0x532fdd(0xe8)&&typeof _0x4f98f7[_0x532fdd(0xdf)]==_0x532fdd(0xe8);if(_0xdc7d28){const _0x56f075=[_0x532fdd(0x137),_0x532fdd(0x100),_0x532fdd(0xf5),_0x532fdd(0xe9),_0x532fdd(0xec),'ParamBodyAngleX','ParamBodyAngleY',_0x532fdd(0xf6),_0x532fdd(0x12c),_0x532fdd(0x109),_0x532fdd(0x128),'ParamMouthForm'];let _0x2ff1d8=!0x0;for(const _0x5f6dd6 of _0x56f075)if(typeof _0x4f98f7[_0x532fdd(0x145)](_0x5f6dd6)==_0x532fdd(0x143)){_0x2ff1d8=!0x1;break;}_0x2ff1d8?rigFace(_0x3ca7a2,0.5):focusFace(_0x3ca7a2,_0x340aef,0.5);}else focusFace(_0x3ca7a2,_0x340aef,0.5);}},focusFace=_0x4909d8=>{const _0x377285=_0x3f3272;if(!currentModel||!_0x4909d8)return;const _0x145270=currentModel[_0x377285(0xf1)][_0x377285(0x11a)],_0x2c3455=document[_0x377285(0xe2)]('live2d'),_0x3986d5=_0x2c3455[_0x377285(0x129)](),{degrees:_0x58f229}=_0x4909d8[_0x377285(0x104)],_0x958d0f=_0x3986d5['width']/0x2,_0x4daec4=_0x3986d5[_0x377285(0xdc)]/0x2,_0x1c8058=0x5,_0x17f20e=_0x58f229['y']/_0x1c8058*(_0x3986d5[_0x377285(0x102)]/0x2),_0x2494eb=-_0x58f229['x']/_0x1c8058*(_0x3986d5[_0x377285(0xdc)]/0x2),_0x2724e7=_0x958d0f+_0x17f20e,_0x370613=_0x4daec4+_0x2494eb;currentModel[_0x377285(0xfd)](_0x2724e7,_0x370613),_0x145270[_0x377285(0x106)](_0x377285(0x13d),lerp(_0x4909d8['mouth']['y'],_0x145270['getParamFloat'](_0x377285(0x13d)),0.3)),currentModel[_0x377285(0xf1)]['eyeBlink']['setEyeParams'](lerp(_0x4909d8['eye']['l'],currentModel[_0x377285(0xf1)][_0x377285(0x120)][_0x377285(0x10d)],0.3));},rigFace=(_0x15561c,_0x568601=0.7)=>{const _0x4eb043=_0x3f3272;if(!currentModel||!_0x15561c)return;const _0x254702=currentModel[_0x4eb043(0xf1)][_0x4eb043(0x11a)];currentModel[_0x4eb043(0xf1)][_0x4eb043(0xe5)]['update']=(..._0x256243)=>{const _0x27a9dd=_0x4eb043;currentModel[_0x27a9dd(0xf1)][_0x27a9dd(0x120)]=void 0x0,_0x254702[_0x27a9dd(0xdf)](_0x27a9dd(0x137),lerp(_0x15561c[_0x27a9dd(0x147)]['x'],_0x254702['getParameterValueById']('ParamEyeBallX'),_0x568601)),_0x254702[_0x27a9dd(0xdf)](_0x27a9dd(0x100),lerp(_0x15561c[_0x27a9dd(0x147)]['y'],_0x254702[_0x27a9dd(0x145)](_0x27a9dd(0x100)),_0x568601)),_0x254702[_0x27a9dd(0xdf)]('ParamAngleX',lerp(_0x15561c[_0x27a9dd(0x104)][_0x27a9dd(0xff)]['y'],_0x254702['getParameterValueById'](_0x27a9dd(0xf5)),_0x568601)),_0x254702['setParameterValueById']('ParamAngleY',lerp(_0x15561c[_0x27a9dd(0x104)]['degrees']['x'],_0x254702[_0x27a9dd(0x145)](_0x27a9dd(0xe9)),_0x568601)),_0x254702[_0x27a9dd(0xdf)](_0x27a9dd(0xec),lerp(_0x15561c[_0x27a9dd(0x104)][_0x27a9dd(0xff)]['z'],_0x254702['getParameterValueById'](_0x27a9dd(0xec)),_0x568601));const _0x2a5ca5=0.3;_0x254702[_0x27a9dd(0xdf)]('ParamBodyAngleX',lerp(_0x15561c['head'][_0x27a9dd(0xff)]['y']*_0x2a5ca5,_0x254702[_0x27a9dd(0x145)](_0x27a9dd(0xf4)),_0x568601)),_0x254702[_0x27a9dd(0xdf)](_0x27a9dd(0x115),lerp(_0x15561c[_0x27a9dd(0x104)][_0x27a9dd(0xff)]['x']*_0x2a5ca5,_0x254702[_0x27a9dd(0x145)](_0x27a9dd(0x115)),_0x568601)),_0x254702[_0x27a9dd(0xdf)](_0x27a9dd(0xf6),lerp(_0x15561c[_0x27a9dd(0x104)][_0x27a9dd(0xff)]['z']*_0x2a5ca5,_0x254702['getParameterValueById'](_0x27a9dd(0xf6)),_0x568601));let _0xfec351=Kalidokit['Face'][_0x27a9dd(0xfa)]({'l':lerp(_0x15561c[_0x27a9dd(0xf2)]['l'],_0x254702['getParameterValueById']('ParamEyeLOpen'),0.7),'r':lerp(_0x15561c[_0x27a9dd(0xf2)]['r'],_0x254702[_0x27a9dd(0x145)](_0x27a9dd(0x109)),0.7)},_0x15561c[_0x27a9dd(0x104)]['y'],{'enableWink':!0x0,'maxRot':0.5});_0x254702[_0x27a9dd(0xdf)]('ParamEyeLOpen',_0xfec351['l']),_0x254702[_0x27a9dd(0xdf)](_0x27a9dd(0x109),_0xfec351['r']),_0x254702[_0x27a9dd(0xdf)](_0x27a9dd(0x128),lerp(_0x15561c[_0x27a9dd(0xde)]['y'],_0x254702[_0x27a9dd(0x145)](_0x27a9dd(0x128)),0.3)),_0x254702[_0x27a9dd(0xdf)]('ParamMouthForm',0.3+lerp(_0x15561c[_0x27a9dd(0xde)]['x'],_0x254702[_0x27a9dd(0x145)](_0x27a9dd(0xdd)),0.3));};};
+const { Application, live2d: { Live2DModel, MotionPreloadStrategy }, Sprite, Texture, Ticker } = PIXI;
+const { Face, Vector: { lerp }, Utils: { clamp } } = Kalidokit;
+
+// ==========================================
+// 1. 解析 URL 参数与模型配置
+// ==========================================
+const urlParams = new URLSearchParams(window.location.search);
+let modelUrl = urlParams.get("modelUrl") || './models/hiyori/hiyori_pro_t10.model3.json';
+console.log('modelUrl:', modelUrl);
+
+if (modelUrl.endsWith('.json')) {
+    let json = await fetch(modelUrl).then(res => res.json());
+    json.url = json.url || modelUrl;
+    
+    // 处理特定的动作参数过滤
+    const selectedMotionsParam = urlParams.get("selectedMotions");
+    const selectedMotions = selectedMotionsParam ? selectedMotionsParam.split(',') : [];
+    
+    if (selectedMotions.length === 0) {
+        json.motions = {};
+    } else {
+        const newMotions = {};
+        selectedMotions.forEach(motionName => {
+            if (json.motions[motionName]) {
+                newMotions[motionName] = json.motions[motionName];
+            }
+        });
+        json.motions = newMotions;
+    }
+    modelUrl = json;
+    console.log("modelUrl:", modelUrl);
+}
+
+// ==========================================
+// 2. 初始化全局变量与 PIXI 舞台
+// ==========================================
+let currentModel;
+let app;
+let backgroundSprite;
+let conn;
+const peer = new Peer(null, { 'debug': 2 });
+
+app = new PIXI.Application({
+    'view': document.getElementById("live2d"),
+    'autoStart': true,
+    'backgroundAlpha': 0,
+    'backgroundColor': 0xffffff,
+    'resizeTo': window
+});
+
+// ==========================================
+// 3. 加载 Live2D 模型并绑定交互事件
+// ==========================================
+Live2DModel.from(modelUrl, {
+    'autoInteract': false,
+    'motionPreload': MotionPreloadStrategy.NONE
+}).then(model => {
+    currentModel = model;
+    currentModel.scale.set(0.4);
+    currentModel.interactive = true;
+    currentModel.anchor.set(0.5, 0.5);
+    currentModel.position.set(window.innerWidth * 0.5, window.innerHeight * 0.8);
+
+    // 拖拽逻辑
+    currentModel.on("pointerdown", e => {
+        currentModel.offsetX = e.data.global.x - currentModel.position.x;
+        currentModel.offsetY = e.data.global.y - currentModel.position.y;
+        currentModel.dragging = true;
+    });
+    currentModel.on("pointerup", () => {
+        currentModel.dragging = false;
+    });
+    currentModel.on("pointermove", e => {
+        if (currentModel.dragging) {
+            currentModel.position.set(e.data.global.x - currentModel.offsetX, e.data.global.y - currentModel.offsetY);
+        }
+    });
+
+    // 滚轮缩放逻辑
+    document.querySelector("#live2d").addEventListener("wheel", e => {
+        e.preventDefault();
+        // 限制缩放比例在 -0.5 到 10 之间
+        currentModel.scale.set(clamp(currentModel.scale.x + e.deltaY * -0.001, -0.5, 10)); 
+    });
+
+    app.stage.addChild(currentModel);
+
+    // ==========================================
+    // 4. 初始化 PeerJS (WebRTC) 接收面捕数据
+    // ==========================================
+    peer.on('open', peerId => {
+        console.log("My peer ID is: " + peerId);
+        document.getElementById("myId").value = peerId;
+        document.getElementById("senderId").value = "Awaiting...";
+    });
+
+    peer.on("connection", function (connection) {
+        // 防止重复连接
+        if (conn && conn.open) {
+            connection.on('open', function () {
+                connection.send("Already connected to another client");
+                setTimeout(function () {
+                    connection.close();
+                }, 500);
+            });
+            return;
+        }
+        conn = connection;
+        console.log("Connected to: " + conn.peer);
+        document.getElementById("senderId").value = "Connected";
+        
+        // 接收到面部数据时驱动模型
+        conn.on("data", faceData => {
+            animateLive2DModel(faceData);
+        });
+    });
+});
+
+// ==========================================
+// 5. 监听背景切换事件 (图片/视频)
+// ==========================================
+window.addEventListener("clearBackgroundImage", function () {
+    if (backgroundSprite) {
+        app.stage.removeChild(backgroundSprite);
+    }
+});
+
+window.addEventListener('setBackgroundImage', function (e) {
+    const imageUrl = e.detail;
+    if (backgroundSprite) {
+        app.stage.removeChild(backgroundSprite);
+    }
+    const texture = Texture.from(imageUrl);
+    backgroundSprite = new Sprite(texture);
+    backgroundSprite.width = app.screen.width;
+    backgroundSprite.height = app.screen.height;
+    app.stage.addChildAt(backgroundSprite, 0); // 放在最底层
+});
+
+window.addEventListener("setBackgroundVideo", function (e) {
+    const videoElement = e.detail;
+    console.log("视频加载中:", videoElement);
+    videoElement.play();
+    console.log('视频播放中:', videoElement);
+
+    videoElement.addEventListener("canplaythrough", function () {
+        if (backgroundSprite) {
+            app.stage.removeChild(backgroundSprite);
+        }
+        console.log("视频加载完成:", videoElement);
+        
+        const videoTexture = Texture.from(videoElement);
+        videoTexture.baseTexture.resource.source.loop = true;
+        
+        if (!videoTexture || videoTexture.baseTexture.hasLoaded === false) {
+            console.error("纹理创建失败或未加载完成");
+            return;
+        }
+        
+        console.log("纹理创建成功:", videoTexture);
+        backgroundSprite = new Sprite(videoTexture);
+        backgroundSprite.preload = 'auto';
+        backgroundSprite.width = app.screen.width;
+        backgroundSprite.height = app.screen.height;
+        app.stage.addChildAt(backgroundSprite, 0);
+        
+        console.log("舞台子元素数量:", app.stage.children.length);
+        Ticker.shared.add(() => {
+            videoTexture.update();
+        });
+    });
+    videoElement.play();
+});
+
+// ==========================================
+// 6. 核心面捕驱动逻辑 (基于 Kalidokit 数据)
+// ==========================================
+const animateLive2DModel = rawFaceData => {
+    if (!currentModel || !rawFaceData) return;
+
+    if (rawFaceData) {
+        // 使用 Kalidokit 解析面捕原始数据
+        const faceRigData = Face.solve(rawFaceData, {
+            'runtime': 'mediapipe',
+            'video': null
+        });
+        
+        const coreModel = currentModel.internalModel.coreModel;
+        const hasParamFunctions = typeof coreModel.getParameterValueById == "function" && typeof coreModel.setParameterValueById == "function";
+        
+        // 检查模型是否支持标准的 Live2D 参数
+        if (hasParamFunctions) {
+            const requiredParams = [
+                "ParamEyeBallX", "ParamEyeBallY", "ParamAngleX", "ParamAngleY", 
+                "ParamAngleZ", 'ParamBodyAngleX', 'ParamBodyAngleY', "ParamBodyAngleZ", 
+                "ParamEyeLOpen", "ParamEyeROpen", "ParamMouthOpenY", 'ParamMouthForm'
+            ];
+            
+            let hasAllParams = true;
+            for (const param of requiredParams) {
+                if (typeof coreModel.getParameterValueById(param) == "undefined") {
+                    hasAllParams = false;
+                    break;
+                }
+            }
+            
+            // 如果参数齐全，使用高精度参数映射；否则使用基础的 focus 回退方案
+            if (hasAllParams) {
+                rigFace(faceRigData, 0.5);
+            } else {
+                focusFace(faceRigData, rawFaceData, 0.5);
+            }
+        } else {
+            focusFace(faceRigData, rawFaceData, 0.5);
+        }
+    }
+};
+
+// 基础回退驱动方案：仅控制目光焦点和嘴巴开合
+const focusFace = faceRigData => {
+    if (!currentModel || !faceRigData) return;
+    
+    const coreModel = currentModel.internalModel.coreModel;
+    const canvas = document.getElementById('live2d');
+    const rect = canvas.getBoundingClientRect();
+    const { degrees } = faceRigData.head;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    // 根据头部旋转角度计算目光焦点位置
+    const focusX = (degrees.y / 5) * (rect.width / 2);
+    const focusY = -(degrees.x / 5) * (rect.height / 2);
+    
+    currentModel.focus(centerX + focusX, centerY + focusY);
+    
+    // 基础的面部动作插值
+    coreModel.setParamFloat("PARAM_MOUTH_OPEN_Y", lerp(faceRigData.mouth.y, coreModel.getParamFloat("PARAM_MOUTH_OPEN_Y"), 0.3));
+    currentModel.internalModel.eyeBlink.setEyeParams(lerp(faceRigData.eye.l, currentModel.internalModel.eyeBlink.eyeParamValue, 0.3));
+};
+
+// 高级驱动方案：映射详细的面部参数 (眼球、头部扭转、身体扭转、眼睑、嘴型)
+const rigFace = (faceRigData, dampening = 0.7) => {
+    if (!currentModel || !faceRigData) return;
+    
+    const coreModel = currentModel.internalModel.coreModel;
+    
+    // 接管 Live2D 内部的 motionManager 刷新循环
+    currentModel.internalModel.motionManager.update = (...args) => {
+        // 禁用内置的自动眨眼，由面捕数据接管
+        currentModel.internalModel.eyeBlink = undefined; 
+        
+        // 眼球转动
+        coreModel.setParameterValueById("ParamEyeBallX", lerp(faceRigData.pupil.x, coreModel.getParameterValueById('ParamEyeBallX'), dampening));
+        coreModel.setParameterValueById("ParamEyeBallY", lerp(faceRigData.pupil.y, coreModel.getParameterValueById("ParamEyeBallY"), dampening));
+        
+        // 头部转动 (X, Y, Z)
+        coreModel.setParameterValueById('ParamAngleX', lerp(faceRigData.head.degrees.y, coreModel.getParameterValueById("ParamAngleX"), dampening));
+        coreModel.setParameterValueById('ParamAngleY', lerp(faceRigData.head.degrees.x, coreModel.getParameterValueById("ParamAngleY"), dampening));
+        coreModel.setParameterValueById("ParamAngleZ", lerp(faceRigData.head.degrees.z, coreModel.getParameterValueById("ParamAngleZ"), dampening));
+        
+        // 身体跟随转动 (通常取头部旋转的 30% 作为联动)
+        coreModel.setParameterValueById('ParamBodyAngleX', lerp(faceRigData.head.degrees.y * 0.3, coreModel.getParameterValueById("ParamBodyAngleX"), dampening));
+        coreModel.setParameterValueById("ParamBodyAngleY", lerp(faceRigData.head.degrees.x * 0.3, coreModel.getParameterValueById("ParamBodyAngleY"), dampening));
+        coreModel.setParameterValueById("ParamBodyAngleZ", lerp(faceRigData.head.degrees.z * 0.3, coreModel.getParameterValueById("ParamBodyAngleZ"), dampening));
+        
+        // 眨眼稳定器：防止面捕轻微抖动导致的疯狂眨眼
+        let blinkData = Kalidokit.Face.stabilizeBlink({
+            'l': lerp(faceRigData.eye.l, coreModel.getParameterValueById('ParamEyeLOpen'), 0.7),
+            'r': lerp(faceRigData.eye.r, coreModel.getParameterValueById("ParamEyeROpen"), 0.7)
+        }, faceRigData.head.y, {
+            'enableWink': true,
+            'maxRot': 0.5
+        });
+        
+        coreModel.setParameterValueById('ParamEyeLOpen', blinkData.l);
+        coreModel.setParameterValueById("ParamEyeROpen", blinkData.r);
+        
+        // 嘴部开合与形状变形
+        coreModel.setParameterValueById("ParamMouthOpenY", lerp(faceRigData.mouth.y, coreModel.getParameterValueById("ParamMouthOpenY"), 0.3));
+        coreModel.setParameterValueById('ParamMouthForm', 0.3 + lerp(faceRigData.mouth.x, coreModel.getParameterValueById("ParamMouthForm"), 0.3));
+    };
+};
