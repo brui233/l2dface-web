@@ -1,1 +1,305 @@
-const _0x54417c=_0x5b21;(function(_0x323d63,_0x4c443a){const _0x21c276=_0x5b21,_0x31f96c=_0x323d63();while(!![]){try{const _0xe6bf81=parseInt(_0x21c276(0x116))/0x1+-parseInt(_0x21c276(0x14b))/0x2+parseInt(_0x21c276(0x106))/0x3+-parseInt(_0x21c276(0x11c))/0x4*(parseInt(_0x21c276(0x10c))/0x5)+-parseInt(_0x21c276(0x100))/0x6+parseInt(_0x21c276(0x137))/0x7*(parseInt(_0x21c276(0x102))/0x8)+parseInt(_0x21c276(0x159))/0x9;if(_0xe6bf81===_0x4c443a)break;else _0x31f96c['push'](_0x31f96c['shift']());}catch(_0x5233d2){_0x31f96c['push'](_0x31f96c['shift']());}}}(_0x5cd5,0x76065));const {Application,live2d:{Live2DModel,MotionPreloadStrategy},Sprite,Texture,Ticker}=PIXI,{Face,Vector:{lerp},Utils:{clamp}}=Kalidokit,urlParams=new URLSearchParams(window[_0x54417c(0x13f)][_0x54417c(0x121)]);let modelUrl=urlParams[_0x54417c(0x13c)](_0x54417c(0x105))||_0x54417c(0x131);if(console[_0x54417c(0x120)](_0x54417c(0x154),modelUrl),modelUrl[_0x54417c(0xf8)](_0x54417c(0x141))){let json=await fetch(modelUrl)['then'](_0x5b709a=>_0x5b709a[_0x54417c(0xf3)]());json[_0x54417c(0x157)]=json[_0x54417c(0x157)]||modelUrl;const selectedMotionsParam=urlParams[_0x54417c(0x13c)](_0x54417c(0x13e)),selectedMotions=selectedMotionsParam?selectedMotionsParam[_0x54417c(0xf0)](','):[];if(selectedMotions[_0x54417c(0xf4)]===0x0)json[_0x54417c(0x15f)]={};else{const newMotions={};selectedMotions[_0x54417c(0x113)](_0x35c410=>{const _0x71d6ed=_0x54417c;json[_0x71d6ed(0x15f)][_0x35c410]&&(newMotions[_0x35c410]=json[_0x71d6ed(0x15f)][_0x35c410]);}),json['motions']=newMotions;}modelUrl=json,console[_0x54417c(0x120)]('modelUrl:',modelUrl);}function _0x5b21(_0x52656c,_0x241d0f){const _0x5cd5ab=_0x5cd5();return _0x5b21=function(_0x5b21b2,_0x486651){_0x5b21b2=_0x5b21b2-0xf0;let _0x44ae93=_0x5cd5ab[_0x5b21b2];return _0x44ae93;},_0x5b21(_0x52656c,_0x241d0f);}function _0x5cd5(){const _0x1e243a=['length','screen','live2d','width','endsWith','ParamEyeLOpen','shared','#C0C0C070','canplaythrough','innerHeight','setParameterValueById','onResults','334962NcHzuc','offsetX','160aaserj','setBackgroundVideo','internalModel','modelUrl','203475xvpeKS','videoWidth','#live2d','ParamAngleX','loop','getElementById','5YGaabz','clearRect','coreModel','ParamBodyAngleZ','height','ParamEyeBallX','#ffe603','forEach','degrees','auto','546547cenoyS','addChild','focus','ParamMouthForm','ParamBodyAngleX','setBackgroundImage','3501824LpvVCE','视频播放中:','preventDefault','mouth','log','search','from','update','deltaY','setOptions','纹理创建失败或未加载完成','videoHeight','stage','Face','resource','querySelector','motionManager','hasLoaded','ParamEyeBallY','dragging','position','./models/hiyori/hiyori_pro_t10.model3.json','pointerup','addChildAt','视频加载中:','removeChild','https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/','227633sPRtVp','stabilizeBlink','data','getBoundingClientRect','getContext','get','舞台子元素数量:','selectedMotions','location','set','.json','getParameterValueById','PARAM_MOUTH_OPEN_Y','to\x20load\x20modelUrl:','addEventListener','play','solve','global','setParamFloat','anchor','330856nvSsYL','纹理创建成功:','ParamBodyAngleY','innerWidth','head','scale','start','.input_video','save','modelUrl:','getParamFloat','canvas.guides','url','ParamEyeROpen','2838492XiZzGX','undefined','add','pupil','ParamAngleZ','ParamAngleY','motions','pointerdown','NONE','source','children','baseTexture','multiFaceLandmarks','ParamMouthOpenY','mediapipe','offsetY','split','eyeBlink','function','json'];_0x5cd5=function(){return _0x1e243a;};return _0x5cd5();}let currentModel,facemesh,app,backgroundSprite;const videoElement=document['querySelector'](_0x54417c(0x152)),guideCanvas=document['querySelector'](_0x54417c(0x156));(async function(){const _0x47d14b=_0x54417c;app=new PIXI['Application']({'view':document[_0x47d14b(0x10b)](_0x47d14b(0xf6)),'autoStart':!0x0,'backgroundAlpha':0x0,'backgroundColor':0xffffff,'resizeTo':window}),console[_0x47d14b(0x120)](_0x47d14b(0x144),modelUrl),currentModel=await Live2DModel[_0x47d14b(0x122)](modelUrl,{'autoInteract':!0x1,'motionPreload':MotionPreloadStrategy[_0x47d14b(0x161)]}),console[_0x47d14b(0x120)](currentModel),currentModel[_0x47d14b(0x150)][_0x47d14b(0x140)](0.4),currentModel['interactive']=!0x0,currentModel[_0x47d14b(0x14a)][_0x47d14b(0x140)](0.5,0.5),currentModel[_0x47d14b(0x130)][_0x47d14b(0x140)](window[_0x47d14b(0x14e)]*0.5,window[_0x47d14b(0xfd)]*0.8),currentModel['on'](_0x47d14b(0x160),_0x2bf40b=>{const _0x27374d=_0x47d14b;currentModel[_0x27374d(0x101)]=_0x2bf40b['data'][_0x27374d(0x148)]['x']-currentModel[_0x27374d(0x130)]['x'],currentModel['offsetY']=_0x2bf40b[_0x27374d(0x139)]['global']['y']-currentModel[_0x27374d(0x130)]['y'],currentModel[_0x27374d(0x12f)]=!0x0;}),currentModel['on'](_0x47d14b(0x132),_0x57cf3a=>{const _0x5baa4b=_0x47d14b;currentModel[_0x5baa4b(0x12f)]=!0x1;}),currentModel['on']('pointermove',_0x20240e=>{const _0x4a42a2=_0x47d14b;currentModel[_0x4a42a2(0x12f)]&&currentModel[_0x4a42a2(0x130)][_0x4a42a2(0x140)](_0x20240e[_0x4a42a2(0x139)][_0x4a42a2(0x148)]['x']-currentModel['offsetX'],_0x20240e[_0x4a42a2(0x139)][_0x4a42a2(0x148)]['y']-currentModel[_0x4a42a2(0x168)]);}),document[_0x47d14b(0x12b)](_0x47d14b(0x108))[_0x47d14b(0x145)]('wheel',_0x5870ae=>{const _0x56ed48=_0x47d14b;_0x5870ae[_0x56ed48(0x11e)](),currentModel[_0x56ed48(0x150)]['set'](clamp(currentModel[_0x56ed48(0x150)]['x']+_0x5870ae[_0x56ed48(0x124)]*-0.001,-0.5,0xa));}),app[_0x47d14b(0x128)][_0x47d14b(0x117)](currentModel),facemesh=new FaceMesh({'locateFile':_0x20ca9c=>_0x47d14b(0x136)+_0x20ca9c}),facemesh[_0x47d14b(0x125)]({'maxNumFaces':0x1,'refineLandmarks':!0x0,'minDetectionConfidence':0.5,'minTrackingConfidence':0.5}),facemesh[_0x47d14b(0xff)](onResults),startCamera(),window['addEventListener']('clearBackgroundImage',function(){backgroundSprite&&app['stage']['removeChild'](backgroundSprite);}),window[_0x47d14b(0x145)](_0x47d14b(0x11b),function(_0x2ad968){const _0x2760e4=_0x47d14b,_0x470805=_0x2ad968['detail'];backgroundSprite&&app[_0x2760e4(0x128)]['removeChild'](backgroundSprite);const _0x2d4a4a=Texture[_0x2760e4(0x122)](_0x470805);backgroundSprite=new Sprite(_0x2d4a4a),backgroundSprite[_0x2760e4(0xf7)]=app['screen'][_0x2760e4(0xf7)],backgroundSprite['height']=app[_0x2760e4(0xf5)][_0x2760e4(0x110)],app[_0x2760e4(0x128)][_0x2760e4(0x133)](backgroundSprite,0x0);}),window[_0x47d14b(0x145)](_0x47d14b(0x103),function(_0xb1015d){const _0x2db4cc=_0x47d14b,_0x2a0484=_0xb1015d['detail'];console[_0x2db4cc(0x120)](_0x2db4cc(0x134),_0x2a0484),_0x2a0484[_0x2db4cc(0x146)](),console['log'](_0x2db4cc(0x11d),_0x2a0484),_0x2a0484[_0x2db4cc(0x145)](_0x2db4cc(0xfc),function(){const _0xc17b8b=_0x2db4cc;backgroundSprite&&app['stage'][_0xc17b8b(0x135)](backgroundSprite),console[_0xc17b8b(0x120)]('视频加载完成:',_0x2a0484);const _0x34ca7c=Texture[_0xc17b8b(0x122)](_0x2a0484);if(_0x34ca7c[_0xc17b8b(0x164)][_0xc17b8b(0x12a)][_0xc17b8b(0x162)][_0xc17b8b(0x10a)]=!0x0,!_0x34ca7c||_0x34ca7c['baseTexture'][_0xc17b8b(0x12d)]===!0x1){console['error'](_0xc17b8b(0x126));return;}console[_0xc17b8b(0x120)](_0xc17b8b(0x14c),_0x34ca7c),backgroundSprite=new Sprite(_0x34ca7c),backgroundSprite['preload']=_0xc17b8b(0x115),backgroundSprite[_0xc17b8b(0xf7)]=app['screen'][_0xc17b8b(0xf7)],backgroundSprite[_0xc17b8b(0x110)]=app['screen'][_0xc17b8b(0x110)],app[_0xc17b8b(0x128)][_0xc17b8b(0x133)](backgroundSprite,0x0),console[_0xc17b8b(0x120)](_0xc17b8b(0x13d),app[_0xc17b8b(0x128)][_0xc17b8b(0x163)]['length']),Ticker[_0xc17b8b(0xfa)][_0xc17b8b(0x15b)](()=>{const _0x10db09=_0xc17b8b;_0x34ca7c[_0x10db09(0x123)]();});}),_0x2a0484[_0x2db4cc(0x146)]();});}());const onResults=_0xa23df0=>{const _0x519b85=_0x54417c;drawResults(_0xa23df0[_0x519b85(0x165)][0x0]),animateLive2DModel(_0xa23df0[_0x519b85(0x165)][0x0]);},drawResults=_0x3f34c8=>{const _0x4202ef=_0x54417c;if(!guideCanvas||!videoElement||!_0x3f34c8)return;guideCanvas[_0x4202ef(0xf7)]=videoElement[_0x4202ef(0x107)],guideCanvas[_0x4202ef(0x110)]=videoElement[_0x4202ef(0x127)];let _0x46a7e3=guideCanvas[_0x4202ef(0x13b)]('2d');_0x46a7e3[_0x4202ef(0x153)](),_0x46a7e3[_0x4202ef(0x10d)](0x0,0x0,guideCanvas[_0x4202ef(0xf7)],guideCanvas['height']),drawConnectors(_0x46a7e3,_0x3f34c8,FACEMESH_TESSELATION,{'color':_0x4202ef(0xfb),'lineWidth':0x1}),_0x3f34c8&&_0x3f34c8[_0x4202ef(0xf4)]===0x1de&&drawLandmarks(_0x46a7e3,[_0x3f34c8[0x1d4],_0x3f34c8[0x1d4+0x5]],{'color':_0x4202ef(0x112),'lineWidth':0x2});},animateLive2DModel=_0x4c904a=>{const _0x520587=_0x54417c;if(!currentModel||!_0x4c904a)return;let _0x211209;if(_0x4c904a){_0x211209=Face[_0x520587(0x147)](_0x4c904a,{'runtime':_0x520587(0x167),'video':videoElement});const _0x1b1365=currentModel[_0x520587(0x104)][_0x520587(0x10e)],_0x482fd2=typeof _0x1b1365['getParameterValueById']==_0x520587(0xf2)&&typeof _0x1b1365[_0x520587(0xfe)]==_0x520587(0xf2);if(_0x482fd2){const _0x3575a3=[_0x520587(0x111),_0x520587(0x12e),_0x520587(0x109),_0x520587(0x15e),_0x520587(0x15d),_0x520587(0x11a),_0x520587(0x14d),_0x520587(0x10f),_0x520587(0xf9),_0x520587(0x158),_0x520587(0x166),'ParamMouthForm'];let _0x1a8ad3=!0x0;for(const _0x5bec48 of _0x3575a3)if(typeof _0x1b1365[_0x520587(0x142)](_0x5bec48)==_0x520587(0x15a)){_0x1a8ad3=!0x1;break;}_0x1a8ad3?rigFace(_0x211209,0.5):focusFace(_0x211209,_0x4c904a,0.5);}else focusFace(_0x211209,_0x4c904a,0.5);}},focusFace=_0x213055=>{const _0x361c71=_0x54417c;if(!currentModel||!_0x213055)return;const _0x3316a0=currentModel[_0x361c71(0x104)][_0x361c71(0x10e)],_0x5bc4f9=document[_0x361c71(0x10b)](_0x361c71(0xf6)),_0x5059d6=_0x5bc4f9[_0x361c71(0x13a)](),{degrees:_0x51152d}=_0x213055[_0x361c71(0x14f)],_0x134913=_0x5059d6[_0x361c71(0xf7)]/0x2,_0x239aa3=_0x5059d6['height']/0x2,_0x585c9a=0x5,_0x20de89=_0x51152d['y']/_0x585c9a*(_0x5059d6[_0x361c71(0xf7)]/0x2),_0x1f9bfd=-_0x51152d['x']/_0x585c9a*(_0x5059d6[_0x361c71(0x110)]/0x2),_0xcbf500=_0x134913+_0x20de89,_0x2f137e=_0x239aa3+_0x1f9bfd;currentModel[_0x361c71(0x118)](_0xcbf500,_0x2f137e),_0x3316a0[_0x361c71(0x149)](_0x361c71(0x143),lerp(_0x213055[_0x361c71(0x11f)]['y'],_0x3316a0[_0x361c71(0x155)](_0x361c71(0x143)),0.3)),currentModel['internalModel'][_0x361c71(0xf1)]['setEyeParams'](lerp(_0x213055['eye']['l'],currentModel[_0x361c71(0x104)]['eyeBlink']['eyeParamValue'],0.3));},rigFace=(_0x5b5a28,_0x5480f8=0.7)=>{const _0x319ba2=_0x54417c;if(!currentModel||!_0x5b5a28)return;const _0x2fb5a0=currentModel[_0x319ba2(0x104)][_0x319ba2(0x10e)];currentModel[_0x319ba2(0x104)][_0x319ba2(0x12c)][_0x319ba2(0x123)]=(..._0x5001e3)=>{const _0x437d52=_0x319ba2;currentModel[_0x437d52(0x104)]['eyeBlink']=void 0x0,_0x2fb5a0[_0x437d52(0xfe)](_0x437d52(0x111),lerp(_0x5b5a28[_0x437d52(0x15c)]['x'],_0x2fb5a0[_0x437d52(0x142)](_0x437d52(0x111)),_0x5480f8)),_0x2fb5a0['setParameterValueById'](_0x437d52(0x12e),lerp(_0x5b5a28[_0x437d52(0x15c)]['y'],_0x2fb5a0[_0x437d52(0x142)](_0x437d52(0x12e)),_0x5480f8)),_0x2fb5a0[_0x437d52(0xfe)]('ParamAngleX',lerp(_0x5b5a28[_0x437d52(0x14f)]['degrees']['y'],_0x2fb5a0[_0x437d52(0x142)](_0x437d52(0x109)),_0x5480f8)),_0x2fb5a0[_0x437d52(0xfe)](_0x437d52(0x15e),lerp(_0x5b5a28[_0x437d52(0x14f)][_0x437d52(0x114)]['x'],_0x2fb5a0[_0x437d52(0x142)]('ParamAngleY'),_0x5480f8)),_0x2fb5a0['setParameterValueById']('ParamAngleZ',lerp(_0x5b5a28[_0x437d52(0x14f)][_0x437d52(0x114)]['z'],_0x2fb5a0[_0x437d52(0x142)](_0x437d52(0x15d)),_0x5480f8));const _0x1fd30f=0.3;_0x2fb5a0['setParameterValueById'](_0x437d52(0x11a),lerp(_0x5b5a28[_0x437d52(0x14f)][_0x437d52(0x114)]['y']*_0x1fd30f,_0x2fb5a0['getParameterValueById'](_0x437d52(0x11a)),_0x5480f8)),_0x2fb5a0[_0x437d52(0xfe)](_0x437d52(0x14d),lerp(_0x5b5a28[_0x437d52(0x14f)][_0x437d52(0x114)]['x']*_0x1fd30f,_0x2fb5a0[_0x437d52(0x142)]('ParamBodyAngleY'),_0x5480f8)),_0x2fb5a0['setParameterValueById'](_0x437d52(0x10f),lerp(_0x5b5a28[_0x437d52(0x14f)][_0x437d52(0x114)]['z']*_0x1fd30f,_0x2fb5a0[_0x437d52(0x142)](_0x437d52(0x10f)),_0x5480f8));let _0x5c04dc=Kalidokit[_0x437d52(0x129)][_0x437d52(0x138)]({'l':lerp(_0x5b5a28['eye']['l'],_0x2fb5a0[_0x437d52(0x142)](_0x437d52(0xf9)),0.7),'r':lerp(_0x5b5a28['eye']['r'],_0x2fb5a0['getParameterValueById']('ParamEyeROpen'),0.7)},_0x5b5a28['head']['y'],{'enableWink':!0x0,'maxRot':0.5});_0x2fb5a0[_0x437d52(0xfe)](_0x437d52(0xf9),_0x5c04dc['l']),_0x2fb5a0[_0x437d52(0xfe)](_0x437d52(0x158),_0x5c04dc['r']),_0x2fb5a0[_0x437d52(0xfe)]('ParamMouthOpenY',lerp(_0x5b5a28[_0x437d52(0x11f)]['y'],_0x2fb5a0['getParameterValueById'](_0x437d52(0x166)),0.3)),_0x2fb5a0[_0x437d52(0xfe)]('ParamMouthForm',0.3+lerp(_0x5b5a28[_0x437d52(0x11f)]['x'],_0x2fb5a0[_0x437d52(0x142)](_0x437d52(0x119)),0.3));};},startCamera=()=>{const _0x1a1f49=_0x54417c,_0x522c23=new Camera(videoElement,{'onFrame':async()=>{await facemesh['send']({'image':videoElement});},'width':0x280,'height':0x1e0});_0x522c23[_0x1a1f49(0x151)]();};
+const {
+  Application,
+  live2d: {
+    Live2DModel,
+    MotionPreloadStrategy
+  },
+  Sprite,
+  Texture,
+  Ticker
+} = PIXI;
+
+const {
+  Face,
+  Vector: {
+    lerp
+  },
+  Utils: {
+    clamp
+  }
+} = Kalidokit;
+
+const urlParams = new URLSearchParams(window.location.search);
+let modelUrl = urlParams.get("modelUrl") || "./models/hiyori/hiyori_pro_t10.model3.json";
+console.log("modelUrl:", modelUrl);
+
+if (modelUrl.endsWith(".json")) {
+  let json = await fetch(modelUrl).then(response => response.json());
+  json.url = json.url || modelUrl;
+  const selectedMotionsParam = urlParams.get("selectedMotions");
+  const selectedMotions = selectedMotionsParam ? selectedMotionsParam.split(',') : [];
+  
+  if (selectedMotions.length === 0) {
+    json.motions = {};
+  } else {
+    const newMotions = {};
+    selectedMotions.forEach(motionName => {
+      if (json.motions[motionName]) {
+        newMotions[motionName] = json.motions[motionName];
+      }
+    });
+    json.motions = newMotions;
+  }
+  modelUrl = json;
+  console.log('modelUrl:', modelUrl);
+}
+
+let currentModel;
+let facemesh;
+let app;
+let backgroundSprite;
+const videoElement = document.querySelector(".input_video");
+const guideCanvas = document.querySelector("canvas.guides");
+
+(async function () {
+  app = new PIXI.Application({
+    'view': document.getElementById("live2d"),
+    'autoStart': true,
+    'backgroundAlpha': 0,
+    'backgroundColor': 0xffffff,
+    'resizeTo': window
+  });
+  console.log("to load modelUrl:", modelUrl);
+  
+  currentModel = await Live2DModel.from(modelUrl, {
+    'autoInteract': false,
+    'motionPreload': MotionPreloadStrategy.NONE
+  });
+  console.log(currentModel);
+  
+  currentModel.scale.set(0.4);
+  currentModel.interactive = true;
+  currentModel.anchor.set(0.5, 0.5);
+  currentModel.position.set(window.innerWidth * 0.5, window.innerHeight * 0.8);
+  
+  // 拖拽事件还原
+  currentModel.on("pointerdown", event => {
+    currentModel.offsetX = event.data.global.x - currentModel.position.x;
+    currentModel.offsetY = event.data.global.y - currentModel.position.y;
+    currentModel.dragging = true;
+  });
+  
+  currentModel.on("pointerup", event => {
+    currentModel.dragging = false;
+  });
+  
+  currentModel.on('pointermove', event => {
+    if (currentModel.dragging) {
+      currentModel.position.set(event.data.global.x - currentModel.offsetX, event.data.global.y - currentModel.offsetY);
+    }
+  });
+  
+  // 鼠标滚轮缩放事件还原
+  document.querySelector("#live2d").addEventListener('wheel', event => {
+    event.preventDefault();
+    currentModel.scale.set(clamp(currentModel.scale.x + event.deltaY * -0.001, -0.5, 10));
+  });
+  app.stage.addChild(currentModel);
+  
+  // MediaPipe Facemesh 还原
+  facemesh = new FaceMesh({
+    'locateFile': file => "https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/" + file
+  });
+  facemesh.setOptions({
+    'maxNumFaces': 1,
+    'refineLandmarks': true,
+    'minDetectionConfidence': 0.5,
+    'minTrackingConfidence': 0.5
+  });
+  facemesh.onResults(onResults);
+  startCamera();
+  
+  window.addEventListener('clearBackgroundImage', function () {
+    if (backgroundSprite) {
+      app.stage.removeChild(backgroundSprite);
+    }
+  });
+  
+  window.addEventListener("setBackgroundImage", function (event) {
+    const imageUrl = event.detail;
+    if (backgroundSprite) {
+      app.stage.removeChild(backgroundSprite);
+    }
+    const texture = Texture.from(imageUrl);
+    backgroundSprite = new Sprite(texture);
+    backgroundSprite.width = app.screen.width;
+    backgroundSprite.height = app.screen.height;
+    app.stage.addChildAt(backgroundSprite, 0);
+  });
+  
+  window.addEventListener("setBackgroundVideo", function (event) {
+    const videoObj = event.detail;
+    console.log("视频加载中:", videoObj);
+    videoObj.play();
+    console.log("视频播放中:", videoObj);
+    
+    videoObj.addEventListener("canplaythrough", function () {
+      if (backgroundSprite) {
+        app.stage.removeChild(backgroundSprite);
+      }
+      console.log('视频加载完成:', videoObj);
+      const videoTexture = Texture.from(videoObj);
+      videoTexture.baseTexture.resource.source.loop = true;
+      
+      if (!videoTexture || videoTexture.baseTexture.hasLoaded === false) {
+        console.error("纹理创建失败或未加载完成");
+        return;
+      }
+      console.log("纹理创建成功:", videoTexture);
+      
+      backgroundSprite = new Sprite(videoTexture);
+      backgroundSprite.preload = "auto";
+      backgroundSprite.width = app.screen.width;
+      backgroundSprite.height = app.screen.height;
+      app.stage.addChildAt(backgroundSprite, 0);
+      console.log("舞台子元素数量:", app.stage.children.length);
+      
+      Ticker.shared.add(() => {
+        videoTexture.update();
+      });
+    });
+    videoObj.play();
+  });
+})();
+
+// 处理面部识别结果
+const onResults = results => {
+  drawResults(results.multiFaceLandmarks[0]);
+  animateLive2DModel(results.multiFaceLandmarks[0]);
+};
+
+// 绘制面部关键点参考线
+const drawResults = landmarks => {
+  if (!guideCanvas || !videoElement || !landmarks) {
+    return;
+  }
+  guideCanvas.width = videoElement.videoWidth;
+  guideCanvas.height = videoElement.videoHeight;
+  let ctx = guideCanvas.getContext('2d');
+  ctx.save();
+  ctx.clearRect(0, 0, guideCanvas.width, guideCanvas.height);
+  drawConnectors(ctx, landmarks, FACEMESH_TESSELATION, {
+    'color': "#C0C0C070",
+    'lineWidth': 1
+  });
+  if (landmarks && landmarks.length === 478) { // 0x1de = 478 关键点
+    drawLandmarks(ctx, [landmarks[468], landmarks[473]], { // 0x1d4 = 468
+      'color': "#ffe603",
+      'lineWidth': 2
+    });
+  }
+};
+
+// 驱动 Live2D 模型
+const animateLive2DModel = landmarks => {
+  if (!currentModel || !landmarks) {
+    return;
+  }
+  let riggedFace;
+  if (landmarks) {
+    riggedFace = Face.solve(landmarks, {
+      'runtime': "mediapipe",
+      'video': videoElement
+    });
+    
+    const coreModel = currentModel.internalModel.coreModel;
+    const hasParamMethods = typeof coreModel.getParameterValueById == "function" && typeof coreModel.setParameterValueById == "function";
+    
+    if (hasParamMethods) {
+      const requiredParams = ["ParamEyeBallX", "ParamEyeBallY", "ParamAngleX", "ParamAngleY", "ParamAngleZ", "ParamBodyAngleX", "ParamBodyAngleY", "ParamBodyAngleZ", "ParamEyeLOpen", "ParamEyeROpen", "ParamMouthOpenY", 'ParamMouthForm'];
+      let hasAllParams = true;
+      for (const param of requiredParams) {
+        if (typeof coreModel.getParameterValueById(param) == "undefined") {
+          hasAllParams = false;
+          break;
+        }
+      }
+      if (hasAllParams) {
+        rigFace(riggedFace, 0.5);
+      } else {
+        focusFace(riggedFace, landmarks, 0.5);
+      }
+    } else {
+      focusFace(riggedFace, landmarks, 0.5);
+    }
+  }
+};
+
+// 聚焦面部 (如果缺少某些参数降级使用此方法)
+const focusFace = riggedFace => {
+  if (!currentModel || !riggedFace) {
+    return;
+  }
+  const coreModel = currentModel.internalModel.coreModel;
+  const canvas = document.getElementById("live2d");
+  const bounds = canvas.getBoundingClientRect();
+  const {
+    degrees: headDegrees
+  } = riggedFace.head;
+  
+  const centerX = bounds.width / 2;
+  const centerY = bounds.height / 2;
+  const offsetX = headDegrees.y / 5 * (bounds.width / 2);
+  const offsetY = -headDegrees.x / 5 * (bounds.height / 2);
+  const targetX = centerX + offsetX;
+  const targetY = centerY + offsetY;
+  
+  currentModel.focus(targetX, targetY);
+  coreModel.setParamFloat("PARAM_MOUTH_OPEN_Y", lerp(riggedFace.mouth.y, coreModel.getParamFloat("PARAM_MOUTH_OPEN_Y"), 0.3));
+  currentModel.internalModel.eyeBlink.setEyeParams(lerp(riggedFace.eye.l, currentModel.internalModel.eyeBlink.eyeParamValue, 0.3));
+};
+
+// 骨骼绑定 (将识别到的数据绑定到 Live2D 参数上)
+const rigFace = (riggedFace, lerpAmount = 0.7) => {
+  if (!currentModel || !riggedFace) {
+    return;
+  }
+  const coreModel = currentModel.internalModel.coreModel;
+  currentModel.internalModel.motionManager.update = (...args) => {
+    currentModel.internalModel.eyeBlink = undefined;
+    
+    // 眼球
+    coreModel.setParameterValueById("ParamEyeBallX", lerp(riggedFace.pupil.x, coreModel.getParameterValueById("ParamEyeBallX"), lerpAmount));
+    coreModel.setParameterValueById("ParamEyeBallY", lerp(riggedFace.pupil.y, coreModel.getParameterValueById("ParamEyeBallY"), lerpAmount));
+    
+    // 头部旋转
+    coreModel.setParameterValueById('ParamAngleX', lerp(riggedFace.head.degrees.y, coreModel.getParameterValueById("ParamAngleX"), lerpAmount));
+    coreModel.setParameterValueById("ParamAngleY", lerp(riggedFace.head.degrees.x, coreModel.getParameterValueById('ParamAngleY'), lerpAmount));
+    coreModel.setParameterValueById('ParamAngleZ', lerp(riggedFace.head.degrees.z, coreModel.getParameterValueById("ParamAngleZ"), lerpAmount));
+    
+    // 身体旋转 (联动头部)
+    coreModel.setParameterValueById("ParamBodyAngleX", lerp(riggedFace.head.degrees.y * 0.3, coreModel.getParameterValueById("ParamBodyAngleX"), lerpAmount));
+    coreModel.setParameterValueById("ParamBodyAngleY", lerp(riggedFace.head.degrees.x * 0.3, coreModel.getParameterValueById('ParamBodyAngleY'), lerpAmount));
+    coreModel.setParameterValueById("ParamBodyAngleZ", lerp(riggedFace.head.degrees.z * 0.3, coreModel.getParameterValueById("ParamBodyAngleZ"), lerpAmount));
+    
+    // 眼睛闭合 (防抖处理)
+    let blinkState = Kalidokit.Face.stabilizeBlink({
+      'l': lerp(riggedFace.eye.l, coreModel.getParameterValueById("ParamEyeLOpen"), 0.7),
+      'r': lerp(riggedFace.eye.r, coreModel.getParameterValueById('ParamEyeROpen'), 0.7)
+    }, riggedFace.head.y, {
+      'enableWink': true,
+      'maxRot': 0.5
+    });
+    
+    coreModel.setParameterValueById("ParamEyeLOpen", blinkState.l);
+    coreModel.setParameterValueById("ParamEyeROpen", blinkState.r);
+    
+    // 嘴巴
+    coreModel.setParameterValueById('ParamMouthOpenY', lerp(riggedFace.mouth.y, coreModel.getParameterValueById("ParamMouthOpenY"), 0.3));
+    coreModel.setParameterValueById('ParamMouthForm', 0.3 + lerp(riggedFace.mouth.x, coreModel.getParameterValueById("ParamMouthForm"), 0.3));
+  };
+};
+
+// 启动摄像头
+const startCamera = () => {
+  const camera = new Camera(videoElement, {
+    'onFrame': async () => {
+      await facemesh.send({
+        'image': videoElement
+      });
+    },
+    'width': 640,  // 0x280
+    'height': 480  // 0x1e0
+  });
+  camera.start();
+};
